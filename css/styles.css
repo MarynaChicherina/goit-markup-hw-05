@@ -10,6 +10,7 @@
     --primary-black-color: #000000;
     --gallery-gap: 30px;
     --icon-color-primary: #AFB1B8;
+    --animation-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -178,19 +179,26 @@ h1, h2, h3, p, strong {
     height: 100%;
 
     background-color: rgba(0, 0, 0, 0.2);
-    
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 250ms var(--animation-function),
+    visibility 250ms var(--animation-function);
+   
 }
 .backdrop.is-hidden {
+    visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    visibility: ;
+    
 }
-
+.backdrop.is-hidden .modal{
+    transform: translate(-50%, -50%) scale(0.7);
+}
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
     display: flex;
     justify-content: flex-end;
 
@@ -199,6 +207,7 @@ h1, h2, h3, p, strong {
     padding: 8px;
 
     background-color: var(--primary-white-color);
+    transition: transform 250ms var(--animation-function);
 }
 .button-modal {
     display: flex;
