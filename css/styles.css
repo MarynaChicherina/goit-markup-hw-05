@@ -107,21 +107,38 @@ h1, h2, h3, p, strong {
 }
 /*стилізація навігації*/
 .linknav {
+    position: relative;
+
     color: var(--title-text-color);
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 .linknav:hover,
 .linknav:focus,
 .linknav.current {
     color: var(--accent-color);
 }
+/*анімація у хедері*/
+.linknav.current::after {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+}
 .addressnav,
 .linknav {
     transition-property: color;
-    transition-duration: 2500ms;
+    transition-duration: 250ms;
     transition-timing-function: var(--animation-function);
 }
 .addressnav {
@@ -188,14 +205,12 @@ h1, h2, h3, p, strong {
     opacity: 1;
     visibility: visible;
     transition: opacity 250ms var(--animation-function),
-    visibility 250ms var(--animation-function);
-   
+    visibility 250ms var(--animation-function);   
 }
 .backdrop.is-hidden {
     visibility: hidden;
     opacity: 0;
-    pointer-events: none;
-    
+    pointer-events: none;    
 }
 .backdrop.is-hidden .modal{
     transform: translate(-50%, -50%) scale(0.7);
@@ -265,12 +280,18 @@ h1, h2, h3, p, strong {
     border-radius: 4px;
     background-color: var(--bg-color-section);
 }
+/*анімація зміни кольору іконок*/
+.icon-qualities,
+.icon-comand {
+    transition: fill 250ms var(--animation-function);                  
+}
+
 .icon-qualities {
     margin: auto;
     width: 70px;
     height: 70px;
 
-    fill: var(--title-text-color);
+    fill: var(--title-text-color);    
 }
 .icon-qualities:hover,  
 .icon-qualities:focus {
@@ -357,7 +378,6 @@ h1, h2, h3, p, strong {
 
     transition: background-color 250ms var(--animation-function),
     color 250ms var(--animation-function);
-
 }
 .comand-link:hover,
 .comand-link:focus {
@@ -366,8 +386,7 @@ h1, h2, h3, p, strong {
 }
 .icon-comand {
     background-color: transparent;
-
-    fill: currentColor;    
+    fill: currentColor;
 }
 .icon-comand:hover,
 .icon-comand:focus {
@@ -412,8 +431,7 @@ h1, h2, h3, p, strong {
    color: var(--icon-color-primary);
 
    transition: background-color 250ms var(--animation-function),
-   color 250ms var(--animation-function),
-    border-color 250ms var(--animation-function);
+   color 250ms var(--animation-function), border-color 250ms var(--animation-function);
 }
 .clients-link:hover,
 .clients-link:focus {
