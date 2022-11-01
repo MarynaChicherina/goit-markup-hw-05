@@ -511,25 +511,44 @@ h1, h2, h3, p, strong {
     border-left: 1px solid #EEEEEE;
     border-right: 1px solid #EEEEEE;
 }
-.cardlink:hover .portfolio-overlay {
-    opacity: 1;
-}
+
 .portfolio-thumb {
     position: relative;
-
     
+}
+.portfolio-thumb::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+
+
+    opacity: 0;
+    background-color: rgba(33, 150, 243, 0.9);
+
+}
+.portfolio-thumb:hover::before {
+    opacity: 1;
+}
+.portfolio-thumb:hover .portfolio-overlay {
+    opacity: 1;
 }
 .portfolio-overlay {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 322px;
+    height: 168px;
+
   
     opacity: 0;
-    outline: 1px solid tomato;
-    background-color: rgba(33, 150, 243, 0.9);
+    font-size: 18px;
+    line-height: 1.55;
+    background-color: transparent;
+    color: var(--primary-white-color);
 }
 /*футер*/
 .page-footer {
