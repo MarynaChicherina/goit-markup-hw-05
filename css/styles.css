@@ -166,7 +166,7 @@ h1, h2, h3, p, strong {
     margin-right: 10px;
 
     fill: currentColor; 
-}   
+}
 /*hero*/
 .hero {
     padding-top: 200px;
@@ -319,7 +319,7 @@ h1, h2, h3, p, strong {
     flex-wrap: wrap;
 }
 .work > .item {
-    flex-basis: calc(100%-2*var(--gallery-gap)/ 3);   
+    flex-basis: calc(100%-2*var(--gallery-gap)/ 3);
 }
 .work > .item:not(:nth-last-child(-n+1)) {
     margin-right: var(--gallery-gap);
