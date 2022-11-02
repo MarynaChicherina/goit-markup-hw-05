@@ -205,7 +205,8 @@ h1, h2, h3, p, strong {
     opacity: 1;
     visibility: visible;
     transition: opacity 250ms var(--animation-function),
-    visibility 250ms var(--animation-function);   
+    visibility 250ms var(--animation-function);
+    z-index: 2;   
 }
 .backdrop.is-hidden {
     visibility: hidden;
@@ -229,6 +230,7 @@ h1, h2, h3, p, strong {
 
     background-color: var(--primary-white-color);
     transition: transform 250ms var(--animation-function);
+    z-index: 3;
 }
 .button-modal {
     display: flex;
@@ -324,7 +326,28 @@ h1, h2, h3, p, strong {
 .work > .item:not(:nth-last-child(-n+1)) {
     margin-right: var(--gallery-gap);
 }
-
+/*оверлей на секції чим ми займаємося*/
+.occupation-thumb {
+    position: relative;
+}
+.occupation-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    opacity: 1;
+    background-color: rgba(47, 48, 58, 0.8);
+ }
+ .occupation-title {
+     position: absolute;
+ 
+     color: var(--primary-white-color);
+ }
 /*секція наша команда*/
 .section-comand {
     padding-top: 94px;
@@ -511,7 +534,6 @@ h1, h2, h3, p, strong {
     border-left: 1px solid #EEEEEE;
     border-right: 1px solid #EEEEEE;
 }
-
 .portfolio-thumb {
     position: relative;
     overflow: hidden;
@@ -532,7 +554,6 @@ h1, h2, h3, p, strong {
 .cardlink:hover .overlay {  
     transform: translateY(0);
     opacity: 1;
-
 }
 .portfolio-overlay {
     position: absolute;
