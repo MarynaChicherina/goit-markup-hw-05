@@ -694,8 +694,6 @@ h1, h2, h3, p, strong {
 .button.primary {
     background-color: var(--accent-color);
     color: var(--primary-white-color);
-    
-
 }
 .button.secondary {
     background-color: var(--bg-color-section);
@@ -708,6 +706,18 @@ h1, h2, h3, p, strong {
     background-color: var(--accent-color);
     color: var(--primary-white-color);
 }
+.button.portfolio {
+    padding: 6px 22px;
+    min-width: 73px;
+    text-align: center;
+
+    transition: box-shadow 250ms var(--animation-function);
+    
+}
+.primary.portfolio {
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+/*кнопка у секції герой*/
 .hero-main > .button.primary {
     padding: 10px 32px;
     min-width: 216px;
@@ -721,15 +731,5 @@ h1, h2, h3, p, strong {
     transition: box-shadow 250ms var(--animation-function);
 }
 
-.button.portfolio {
-    padding: 6px 22px;
-    min-width: 73px;
-    text-align: center;
 
-    transition: box-shadow 250ms var(--animation-function);
-    
-}
-.primary.portfolio {
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
-}
 
