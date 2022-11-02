@@ -694,13 +694,15 @@ h1, h2, h3, p, strong {
 .button.primary {
     background-color: var(--accent-color);
     color: var(--primary-white-color);
+    transition: box-shadow 250ms var(--animation-function);
 }
 .button.secondary {
     background-color: var(--bg-color-section);
     color: var(--title-text-color);
 
     transition: background-color 250ms var(--animation-function),
-    color 250ms var(--animation-function);
+    color 250ms var(--animation-function), 
+    box-shadow 250ms var(--animation-function);
 }
 .button.secondary:hover {
     background-color: var(--accent-color);
@@ -710,8 +712,6 @@ h1, h2, h3, p, strong {
     padding: 6px 22px;
     min-width: 73px;
     text-align: center;
-
-    transition: box-shadow 250ms var(--animation-function);
     
 }
 .primary.portfolio {
